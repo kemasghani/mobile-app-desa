@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/horizontal_safe_area"
+        android:paddingVertical="@dimen/vertical_safe_area">
+
+        <!-- Date -->
+        <TextView
+            android:id="@+id/tv_balance_trans_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="31 Okt 2024"
+            style="@style/label_medium"
+            android:textColor="@color/black_300"
+            android:layout_marginTop="17dp"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Balance Transaction -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <ImageView
+                android:id="@+id/iv_balance_trans_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_graph_arrow_increase"
+                android:layout_marginEnd="14dp"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_balance_trans_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Isi Ulang Saldo"
+                    style="@style/label_large_prominent"/>
+
+                <TextView
+                    android:id="@+id/tv_balance_trans_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Isi ulang dari BANK BCA GRACIA HOTMAULI 123456789"
+                    style="@style/label_small"
+                    android:textColor="@color/black_500"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_balance_trans_amount"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:text="+ Rp1.000.000"
+                style="@style/label_large_prominent"
+                android:textColor="@color/blue_500"
+                android:textAlignment="textEnd"
+                android:layout_marginStart="22dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Divider -->
+    <View
+        android:id="@+id/divider_balance_trans"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black_50"/>
+
+</LinearLayout>

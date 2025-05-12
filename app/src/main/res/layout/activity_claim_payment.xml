@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="true"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.profile.mystore.sells.payment.ClaimPaymentActivity">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/header" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingVertical="@dimen/vertical_safe_area"
+            android:paddingHorizontal="@dimen/horizontal_safe_area"
+            android:layout_marginTop="19dp">
+
+            <!-- Nomor Pesanan -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No. Pesanan"
+                    style="@style/body_medium"
+                    android:layout_marginEnd="4dp"/>
+
+                <EditText
+                    android:id="@+id/edt_no_pesanan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_text_field_disabled"
+                    android:padding="8dp"
+                    style="@style/body_small"
+                    android:layout_marginTop="4dp"
+                    android:enabled="false"/>
+
+            </LinearLayout>
+
+            <!-- Metode Pembayaran -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Metode Pembayaran"
+                    style="@style/body_medium"
+                    android:layout_marginEnd="4dp"/>
+
+                <EditText
+                    android:id="@+id/edt_metode_bayar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_text_field_disabled"
+                    android:padding="8dp"
+                    style="@style/body_small"
+                    android:layout_marginTop="4dp"
+                    android:enabled="false"/>
+
+            </LinearLayout>
+
+            <!-- Nomor Rekening -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No. Rekening"
+                    style="@style/body_medium"
+                    android:layout_marginEnd="4dp"/>
+
+                <EditText
+                    android:id="@+id/edt_no_rekening"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_text_field_disabled"
+                    android:padding="8dp"
+                    style="@style/body_small"
+                    android:layout_marginTop="4dp"
+                    android:enabled="false"/>
+
+            </LinearLayout>
+
+            <!-- Jenis Klaim Pembayaran -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="24dp">
+
+                <!-- Label Kondisi Produk -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Jenis Klaim Pembayaran"
+                        style="@style/body_medium"
+                        android:layout_marginEnd="4dp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="*"
+                        style="@style/body_medium"
+                        android:textColor="@color/red_required"
+                        android:layout_gravity="end"/>
+
+                </LinearLayout>
+
+                <!-- Spinner Dropdown dengan Chevron -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/bg_text_field"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="10dp">
+
+                    <Spinner
+                        android:id="@+id/spinner_jenis_klaim"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="8dp"
+                        style="@style/body_small"
+                        android:background="@null"/>
+
+                    <!-- Chevron Down Icon -->
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/ic_down"
+                        android:layout_marginEnd="8dp"
+                        android:contentDescription="Chevron Down" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Nominal Belum Lunas -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="24dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nominal Belum Lunas"
+                        style="@style/body_medium"
+                        android:layout_marginEnd="4dp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="*"
+                        style="@style/body_medium"
+                        android:textColor="@color/red_required"
+                        android:layout_gravity="end"/>
+
+                </LinearLayout>
+
+                <!-- Input Harga dengan Prefix "Rp" -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/bg_text_field"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rp"
+                        style="@style/label_medium_prominent"
+                        android:textColor="@color/black_300"
+                        android:padding="8dp" />
+
+                    <EditText
+                        android:id="@+id/edt_nominal_klaim"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:hint="Isi nominal harga produk yang ingin diklaim di sini"
+                        android:inputType="number"
+                        android:padding="8dp"
+                        style="@style/body_small" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Mutasi Rekening -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="24dp">
+
+                <!-- Label Foto Mutasi Rekening -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Unggah Mutasi Rekening Terkait"
+                        style="@style/body_medium"
+                        android:layout_marginEnd="4dp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="*"
+                        style="@style/body_medium"
+                        android:textColor="@color/red_required"
+                        android:layout_gravity="end"/>
+
+                    <!-- TextView sebagai link untuk upload gambar -->
+                    <TextView
+                        android:id="@+id/tv_tambah_foto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tambah Foto"
+                        style="@style/body_small"
+                        android:textColor="@color/blue_500"
+                        android:padding="4dp"
+                        android:clickable="true"
+                        android:focusable="true"/>
+
+                </LinearLayout>
+
+                <!-- ImageView untuk preview gambar -->
+                <ImageView
+                    android:id="@+id/iv_preview_foto"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:layout_marginTop="8dp"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="Preview Gambar"
+                    android:src="@drawable/ic_upload"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_submit"
+                android:text="Kirim Pengajuan"
+                style="@style/button.large.disabled.long"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

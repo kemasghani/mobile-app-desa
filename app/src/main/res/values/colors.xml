@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#1B1C1F</color>
+    <color name="white">#FDFDFD</color>
+    <color name="light_gray">#F7F7F7</color>
+    <color name="red_required">#FF1919</color>
+    
+    <color name="blue_50">#edf5f9</color>
+    <color name="blue_100">#c6e1ed</color>
+    <color name="blue_200">#abd2e5</color>
+    <color name="blue_300">#84bed9</color>
+    <color name="blue_400">#6db1d1</color>
+    <color name="blue_500">#489ec6</color>
+    <color name="blue_600">#4290b4</color>
+    <color name="blue_700">#33708d</color>
+    <color name="blue_800">#28576d</color>
+    <color name="blue_900">#1e4253</color>
+
+    <color name="black_50">#ececed</color>
+    <color name="black_100">#c4c4c7</color>
+    <color name="black_200">#a7a8ac</color>
+    <color name="black_300">#7f8086</color>
+    <color name="black_400">#66686e</color>
+    <color name="black_500">#40424a</color>
+    <color name="black_600">#3a3c43</color>
+    <color name="black_700">#2d2f35</color>
+    <color name="black_800">#232429</color>
+    <color name="black_900">#1B1C1F</color>
+
+    <color name="darkblue_50">#eaebf1</color>
+    <color name="darkblue_100">#bdc1d4</color>
+    <color name="darkblue_200">#9da3bf</color>
+    <color name="darkblue_300">#7178a2</color>
+    <color name="darkblue_400">#555e90</color>
+    <color name="darkblue_500">#2b3674</color>
+    <color name="darkblue_600">#27316a</color>
+    <color name="darkblue_700">#1f2652</color>
+    <color name="darkblue_800">#181e40</color>
+    <color name="darkblue_900">#121731</color>
+
+    <color name="gray_1">#E8ECF2</color>
+    <color name="soft_gray">#7D8FAB</color>
+    <color name="blue1">#489EC6</color>
+</resources>

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.profile.mystore.profile.DetailStoreProfileActivity">
+
+    <include layout="@layout/header" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/layout_profile_pic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingVertical="@dimen/vertical_safe_area"
+                android:paddingHorizontal="@dimen/horizontal_safe_area"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="10dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/iv_profile"
+                    android:layout_width="77dp"
+                    android:layout_height="77dp"
+                    android:src="@drawable/placeholder_image"
+                    android:scaleType="centerCrop"
+                    app:shapeAppearanceOverlay="@style/circular_image"/>
+
+                <Button
+                    style="@style/button.small.secondary.short"
+                    android:id="@+id/btn_edit_store_profile"
+                    android:text="Ubah Profil"
+                    android:layout_marginTop="25dp"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black_200"/>
+
+            <LinearLayout
+                android:id="@+id/layout_profile_form"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingVertical="@dimen/vertical_safe_area"
+                android:paddingHorizontal="@dimen/horizontal_safe_area"
+                android:layout_marginTop="4dp">
+
+                <!-- Nama Toko -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nama Toko"
+                        style="@style/body_medium"
+                        android:layout_marginEnd="4dp"/>
+
+                    <EditText
+                        android:id="@+id/edt_nama_toko"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_text_field_disabled"
+                        android:padding="8dp"
+                        style="@style/body_small"
+                        android:layout_marginTop="4dp"
+                        android:enabled="false"/>
+
+                </LinearLayout>
+
+                <!-- Jenis Toko -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Jenis Toko"
+                        style="@style/body_medium"
+                        android:layout_marginEnd="4dp"/>
+
+                    <EditText
+                        android:id="@+id/edt_jenis_toko"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_text_field_disabled"
+                        android:padding="8dp"
+                        style="@style/body_small"
+                        android:layout_marginTop="4dp"
+                        android:enabled="false"/>
+
+                </LinearLayout>
+
+                <!-- Deskripsi Toko -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Deskripsi Toko"
+                        style="@style/body_medium"
+                        android:layout_marginEnd="4dp"/>
+
+                    <EditText
+                        android:id="@+id/edt_deskripsi_toko"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:background="@drawable/bg_text_field_disabled"
+                        android:padding="8dp"
+                        style="@style/body_small"
+                        android:inputType="text|textMultiLine"
+                        android:gravity="top"
+                        android:layout_marginTop="4dp"
+                        android:enabled="false"/>
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+            <!-- Alamat Toko -->
+            <LinearLayout
+                android:id="@+id/layout_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="10dp"
+                android:paddingHorizontal="@dimen/horizontal_safe_area"
+                android:gravity="center">
+
+                <TextView
+                    style="@style/label_large"
+                    android:id="@+id/tv_address"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Atur Alamat Toko" />
+
+                <ImageView
+                    android:id="@+id/iv_address"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_navigate_next"/>
+
+            </LinearLayout>
+
+            <!-- Metode Pembayaran -->
+            <LinearLayout
+                android:id="@+id/layout_payment_method"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="10dp"
+                android:paddingHorizontal="@dimen/horizontal_safe_area"
+                android:gravity="center">
+
+                <TextView
+                    style="@style/label_large"
+                    android:id="@+id/tv_payment_method"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Atur Metode Pembayaran" />
+
+                <ImageView
+                    android:id="@+id/iv_payment_method"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_navigate_next"/>
+
+            </LinearLayout>
+
+            <!-- Layanan Pengiriman -->
+            <LinearLayout
+                android:id="@+id/layout_ship_services"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="10dp"
+                android:paddingHorizontal="@dimen/horizontal_safe_area"
+                android:gravity="center">
+
+                <TextView
+                    style="@style/label_large"
+                    android:id="@+id/tv_ship_services"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Atur Layanan Pengiriman" />
+
+                <ImageView
+                    android:id="@+id/iv_ship_services"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_navigate_next"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

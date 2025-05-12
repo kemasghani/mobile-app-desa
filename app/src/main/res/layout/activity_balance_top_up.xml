@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="true"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.profile.mystore.balance.BalanceTopUpActivity"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/header" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingVertical="@dimen/vertical_safe_area"
+            android:paddingHorizontal="@dimen/horizontal_safe_area"
+            android:layout_marginTop="19dp">
+
+            <!-- Foto Produk -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="24dp">
+
+                <!-- Label Foto Produk -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Foto Produk"
+                        style="@style/body_medium"
+                        android:layout_marginEnd="4dp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="*"
+                        style="@style/body_medium"
+                        android:textColor="@color/red_required"
+                        android:layout_gravity="end"/>
+
+                    <!-- TextView sebagai link untuk upload gambar -->
+                    <TextView
+                        android:id="@+id/tv_tambah_foto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tambah Foto"
+                        android:textColor="@color/blue_500"
+                        style="@style/body_small"
+                        android:padding="4dp"
+                        android:clickable="true"
+                        android:focusable="true"/>
+
+                </LinearLayout>
+
+                <!-- ImageView untuk preview gambar -->
+                <ImageView
+                    android:id="@+id/img_preview"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:layout_marginTop="8dp"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="Preview Gambar"
+                    android:src="@drawable/ic_upload"/>
+
+            </LinearLayout>
+
+            <!-- Nominal Isi Ulang -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="24dp">
+
+                <!-- Label Harga Produk -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nominal Isi Ulang"
+                        style="@style/body_medium"
+                        android:layout_marginEnd="4dp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="*"
+                        style="@style/body_medium"
+                        android:textColor="@color/red_required"
+                        android:layout_gravity="end"/>
+
+                </LinearLayout>
+
+                <!-- Input Harga dengan Prefix "Rp" -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/bg_text_field"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rp"
+                        style="@style/label_medium_prominent"
+                        android:textColor="@color/black_300"
+                        android:padding="8dp" />
+
+                    <EditText
+                        android:id="@+id/edt_nominal_topup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:hint="Isi nominal isi ulang saldo di sini"
+                        android:inputType="number"
+                        android:padding="8dp"
+                        style="@style/body_small" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Metode Pembayaran -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="24dp">
+
+                <!-- Label Metode Pembayaran -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Metode Pembayaran"
+                        style="@style/body_medium"
+                        android:layout_marginEnd="4dp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="*"
+                        style="@style/body_medium"
+                        android:textColor="@color/red_required"
+                        android:layout_gravity="end"/>
+
+                </LinearLayout>
+
+                <!-- Spinner Dropdown dengan Chevron -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/bg_text_field"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="10dp">
+
+                    <Spinner
+                        android:id="@+id/spinner_metode_bayar"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="8dp"
+                        style="@style/body_small"
+                        android:background="@null"/>
+
+                    <!-- Chevron Down Icon -->
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/ic_down"
+                        android:layout_marginEnd="8dp"
+                        android:contentDescription="Chevron Down" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Tanggal Transaksi -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="24dp">
+
+                <!-- Label -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tanggal Transaksi Isi Ulang"
+                        style="@style/body_medium"
+                        android:layout_marginEnd="4dp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="*"
+                        style="@style/body_medium"
+                        android:textColor="@color/red_required"
+                        android:layout_gravity="end"/>
+
+                </LinearLayout>
+
+                <!-- Date Picker dengan Icon -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_text_field"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <!-- Icon Kalender -->
+                    <ImageView
+                        android:id="@+id/iv_date_picker"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginStart="8dp"
+                        android:src="@drawable/ic_calendar"
+                        android:contentDescription="Pilih Tanggal" />
+
+                    <EditText
+                        android:id="@+id/edt_tgl_transaksi"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="Pilih tanggal transaksi isi ulang dilakukan di sini"
+                        android:padding="8dp"
+                        style="@style/body_small"
+                        android:background="@null"
+                        android:focusable="false"
+                        android:clickable="true" />
+
+                    <ImageView
+                        android:id="@+id/img_date_picker"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:src="@drawable/ic_navigate_next"
+                        android:contentDescription="Pilih Tanggal"
+                        app:tint="@color/black_300" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_send"
+                android:text="Kirim"
+                style="@style/button.large.disabled.long"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

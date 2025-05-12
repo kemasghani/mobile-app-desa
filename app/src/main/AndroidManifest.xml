@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32"/>
+
+    <application
+        android:allowBackup="true"
+        android:enableOnBackInvokedCallback="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Ecommerce_serang"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity
+            android:name=".ui.order.detail.AddEvidencePaymentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.order.history.HistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.order.detail.PaymentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".data.api.response.customer.cart.CartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.order.address.EditAddressActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.order.address.AddAddressActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.order.address.AddressActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.order.ShippingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.order.CheckoutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.profile.mystore.profile.payment_info.DetailPaymentInfoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.profile.mystore.profile.payment_info.PaymentInfoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.profile.mystore.profile.address.DetailStoreAddressActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.profile.mystore.product.ProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.product.ReviewProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.profile.mystore.sells.SellsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.profile.mystore.balance.BalanceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.profile.mystore.sells.shipment.ShippingConfirmationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.profile.mystore.sells.payment.ClaimPaymentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.profile.mystore.balance.BalanceTopUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.profile.mystore.product.DetailStoreProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.profile.mystore.profile.DetailStoreProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.profile.mystore.profile.EditStoreProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.profile.mystore.address.StoreAddressActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.profile.mystore.MyStoreActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.product.DetailProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.auth.RegisterActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.auth.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.profile.DetailProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="false" />
+    </application>
+
+</manifest>

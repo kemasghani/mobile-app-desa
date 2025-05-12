@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:paddingTop="16dp">
+
+    <!-- Payment Header -->
+    <View
+        android:id="@+id/shape_sells_title"
+        android:layout_width="4dp"
+        android:layout_height="32dp"
+        android:background="@drawable/shape_sells_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/layout_payment_header"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        app:layout_constraintStart_toStartOf="@id/shape_sells_title"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_payment_title"
+            style="@style/label_medium_prominent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:text="Pesanan Telah Dibayar"/>
+
+        <TextView
+            android:id="@+id/tv_payment_number"
+            style="@style/label_small"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:textColor="@color/black_300"
+            android:text="No. Pesanan: 123456789"/>
+
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical"
+        android:layout_marginEnd="16dp"
+        android:gravity="end">
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            style="@style/label_small"
+            android:textAlignment="textEnd"
+            android:text="Konfirmasi pembayaran sebelum:"
+            android:textColor="@color/black_300" />
+
+        <TextView
+            android:id="@+id/tv_payment_due"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="25 Okt; 23.59"
+            style="@style/label_small"
+            android:paddingHorizontal="4dp"
+            android:textColor="@color/darkblue_500"
+            android:background="@drawable/bg_product_active" />
+
+    </LinearLayout>
+
+    <!-- Order Detail -->
+    <LinearLayout
+        android:id="@+id/layout_payment_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_payment_header"
+        android:paddingHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black_50"/>
+
+        <!-- Product Detail -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_payment_product_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="12dp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_payment_product"
+                android:layout_width="95dp"
+                android:layout_height="64dp"
+                android:src="@drawable/placeholder_image"
+                android:scaleType="centerCrop"
+                android:contentDescription="Payment Product Image"
+                app:shapeAppearanceOverlay="@style/store_product_image"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="13dp"
+                app:layout_constraintStart_toEndOf="@id/iv_payment_product"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tv_payment_product_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="Jaket Pink Fuschia"
+                    style="@style/label_medium_prominent"/>
+
+                <TextView
+                    android:id="@+id/tv_payment_product_variant"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="S"
+                    style="@style/label_medium"
+                    android:textColor="@color/black_300"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="13dp"
+                android:gravity="end"
+                app:layout_constraintStart_toEndOf="@id/iv_payment_product"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/iv_payment_product">
+
+                <TextView
+                    android:id="@+id/tv_payment_product_qty"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="x2"
+                    style="@style/label_medium"
+                    android:textColor="@color/black_300"
+                    android:textAlignment="textEnd"/>
+
+                <TextView
+                    android:id="@+id/tv_payment_product_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="Rp150.000"
+                    style="@style/label_medium"
+                    android:textAlignment="textEnd"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_see_more"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:text="Lihat 3 produk lainnya"
+                android:gravity="center"
+                style="@style/label_small"
+                android:fontFamily="@font/dmsans_italic"
+                android:textColor="@color/black_300"
+                app:layout_constraintTop_toBottomOf="@id/iv_payment_product"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginVertical="8dp"
+                android:clickable="true"
+                android:visibility="gone"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black_50"/>
+
+        <!-- Total Price -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="8dp">
+
+            <TextView
+                android:id="@+id/tv_payment_qty"
+                style="@style/label_large"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:text="2 produk" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_alignParentEnd="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total:"
+                    style="@style/label_large_prominent"
+                    android:textAlignment="textEnd"/>
+
+                <TextView
+                    android:id="@+id/tv_payment_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rp300.000"
+                    style="@style/label_large_prominent"
+                    android:textColor="@color/blue_500"
+                    android:layout_marginStart="5dp"
+                    android:textAlignment="textEnd"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black_50"/>
+
+        <!-- Action Buttons -->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="158dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_alignParentStart="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/ic_person"
+                        app:tint="@color/black_500" />
+
+                    <TextView
+                        android:id="@+id/tv_payment_customer"
+                        style="@style/label_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:layout_marginStart="4dp"
+                        android:textColor="@color/black_500"
+                        android:text="Gracia Hotmauli"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/ic_location" />
+
+                    <TextView
+                        android:id="@+id/tv_payment_location"
+                        style="@style/label_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:layout_marginStart="4dp"
+                        android:textColor="@color/black_500"
+                        android:text="Serang"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_confirm_payment"
+                style="@style/button.small.active.medium"
+                android:text="Konfirmasi Pembayaran"
+                android:layout_alignParentEnd="true"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:background="@color/black_50"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_payment_detail"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

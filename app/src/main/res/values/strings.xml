@@ -1,0 +1,121 @@
+<resources>
+    <string name="app_name">ecommerce_serang</string>
+
+
+    <!--Placeholder-->
+    <string name="fragment_home_search">Cari produk</string>
+    <string name="fragment_home_categories">Kategori Produk</string>
+    <string name="fragment_home_item_categories">Makanan Ringan</string>
+    <string name="show_all">Lainnya</string>
+
+    <string name="item_price_txt">Rp%.1f</string>
+    <string name="retry">Coba lagi\n</string>
+    <string name="error_loading">Terdapat error...</string>
+    <string name="new_products_text">Produk Terbaru</string>
+    <string name="rating">4.5</string>
+    <string name="open_store">Buka Toko</string>
+    <string name="delivery">Dikirim</string>
+    <string name="packages">Dikemas</string>
+    <string name="waiting_payment">Belum Dibayar</string>
+    <string name="users_email">youremail@gmail.com</string>
+    <string name="phone_number">123456789123</string>
+    <string name="date_birth">24 Oktober 2024</string>
+    <string name="username_profile">User123</string>
+    <string name="users_name">User</string>
+    <string name="hint_confirmation_password">Konfirmasi Kata Sandi</string>
+    <string name="email">Email</string>
+    <string name="hint_email">Masukkan Email</string>
+    <string name="username">Nama Pengguna</string>
+    <string name="hint_username">Masukkan Nama Pengguna</string>
+    <string name="full_name">Nama Lengkap</string>
+    <string name="hint_fullname">Masukkan Nama Lengkap</string>
+    <string name="password">Kata Sandi</string>
+    <string name="hint_password">Masukkan Kata Sandi Baru</string>
+    <string name="confirm_password">Konfirmasi Kata Sandi</string>
+    <string name="birth_date">Tanggal Lahir</string>
+    <string name="hint_birth_date">Pilih Tanggal Lahir</string>
+    <string name="gender">Jenis Kelamin</string>
+    <string name="hint_gender">Pilih Jenis Kelamin</string>
+    <string name="number_phone">Nomor Telepon</string>
+    <string name="hint_number_phone">Masukkan Nomor Telepon</string>
+    <string name="no_account">Belum punya akun?</string>
+    <string name="login">Masuk</string>
+    <string name="signup">Daftar</string>
+    <string name="login_email">Email atau Nomor Telepon</string>
+    <string name="hint_login_email">Email atau No. Handphone</string>
+    <string name="hint_login_password">Kata Sandi</string>
+    <string name="forget_password">Lupa Kata Sandi?</string>
+    <string name="enter_otp">Masukkan Kode OTP</string>
+    <string name="sold_product_text">Produk Terlaris</string>
+    <string name="item_sold">Terjual 10 buah</string>
+    <string name="product_image">produc image</string>
+    <string name="ulasan_pembeli">Ulasan Pembeli</string>
+    <string name="lihat_semua">Lihat Semua</string>
+    <string name="detail_produk">Detail Produk</string>
+    <string name="berat_produk">Berat</string>
+    <string name="stock_product">Stok</string>
+    <string name="deskripsi_produk">Deskripsi Produk</string>
+    <string name="kategori">Kategori</string>
+    <string name="seller_image">Seller Profile Picture</string>
+    <string name="produk_lainnya">Produk Lainnya</string>
+    <string name="add_to_cart">Keranjang</string>
+    <string name="beli_sekarang">Beli Sekarang</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="batas_tagihan">Batas Tagihan :</string>
+    <string name="total_order">Total: </string>
+    <string name="dl_date_wait">23:59 15 April 2025</string>
+    <string name="no_available_orders">Tidak ada order</string>
+    <string name="item_count_prod">%d produk</string>
+    <string name="show_more_product">%d produk lainnya</string>
+    <!--    status order-->
+    <string name="all_orders">Semua Pesanan </string>
+    <string name="pending_orders">Menunggu Tagihan</string>
+    <string name="unpaid_orders">Konfrimasi Bayar</string>
+    <string name="processed_orders">Diproses</string>
+    <string name="paid_orders">Sudah Dibayar</string>
+    <string name="delivered_orders">Pesanan Sampai</string>
+    <string name="completed_orders">Selesai</string>
+    <string name="shipped_orders">Dikirim</string>
+    <string name="canceled_orders">Dibatalkan</string>
+    <!--    deadline label -->
+    <string name="dl_pending">Batas Tagihan</string>
+    <string name="dl_unpaid">Batas Pembayaran</string>
+    <string name="dl_processed">Batas Pengiriman</string>
+    <string name="dal_paid">Semua Pesanan </string>
+    <string name="dl_delivered">Semua Pesanan </string>
+    <string name="dl_completed">Semua Pesanan </string>
+    <string name="dl_shipped">Tanggal Pesanan Sampai</string>
+    <string name="dl_canceled">Semua Pesanan </string>
+
+    <string name="sent_evidence">Kirim Bukti Pembayaran </string>
+    <string name="canceled_order_btn">Batalkan Pesanan </string>
+    <string name="claim_complaint">Ajukan Komplain </string>
+    <string name="claim_order">Pesanan Diterima </string>
+    <string name="add_review">Beri Ulasan </string>
+
+    <string name="warning_icon">Warning Icon</string>
+    <string name="cancel_order_confirmation">Apakah anda yakin ingin membatalkan pesanan?</string>
+    <string name="reason_for_cancellation">Alasan Batalkan Pesanan</string>
+    <string name="cancel">Kembali</string>
+    <string name="confirm">Batalkan Pesanan</string>
+    <string name="order_canceled_successfully">Order canceled successfully</string>
+    <string name="failed_to_cancel_order">Failed to cancel order</string>
+    <string name="please_select_cancellation_reason">Please select a reason for cancellation</string>
+    <string name="upload_evidence">Unggah Bukti Komplain</string>
+    <string name="complaint_image">Complaint evidence image</string>
+    <string name="tap_to_select_image">Tekan untuk unggah foto</string>
+    <string name="please_select_image">Please select an image as evidence</string>
+    <string name="image_too_large">Image is too large. Please select a smaller image.</string>
+
+    <!-- Cancellation Reasons -->
+    <string-array name="cancellation_reasons">
+        <item>Found a better price elsewhere</item>
+        <item>Changed my mind about the product</item>
+        <item>Ordered the wrong item</item>
+        <item>Shipping time is too long</item>
+        <item>Financial reasons</item>
+        <item>Other reason</item>
+    </string-array>
+
+
+</resources>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="160dp"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:gravity="center_horizontal">
+
+        <!-- Product Image -->
+        <ImageView
+            android:id="@+id/imgRelatedProduct"
+            android:layout_width="140dp"
+            android:layout_height="120dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/placeholder_image" />
+
+        <!-- Product Name -->
+        <TextView
+            android:id="@+id/tvRelatedProductName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Keripik Kulit Sapi"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:gravity="fill"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/black" />
+
+        <!-- Price -->
+        <TextView
+            android:id="@+id/tvRelatedProductPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rp45.000"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:gravity="fill"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/black" />
+
+        <!-- Rating -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_gravity="start"
+            android:layout_marginTop="4dp">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/baseline_star_24" />
+
+            <TextView
+                android:id="@+id/tvRelatedProductRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5.0"
+                android:textColor="@color/black" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

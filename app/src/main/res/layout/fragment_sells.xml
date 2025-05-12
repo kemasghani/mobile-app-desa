@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sells"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.profile.mystore.sells.SellsFragment">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout_sells"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabMode="scrollable"
+        app:tabTextAppearance="@style/label_medium_prominent"
+        app:tabSelectedTextAppearance="@style/label_medium_prominent"
+        app:tabIndicatorColor="@color/blue_500"
+        app:tabSelectedTextColor="@color/blue_500"
+        app:tabTextColor="@color/black_300"
+        app:tabBackground="@color/white"
+        app:tabPadding="13dp"/>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager_sells"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

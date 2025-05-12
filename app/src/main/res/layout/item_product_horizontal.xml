@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="185dp"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="8dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/imageLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:cardCornerRadius="14dp"
+        app:layout_constraintDimensionRatio="272:218"
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardElevation="0dp"
+        app:strokeColor="@color/gray_1"
+        app:strokeWidth="1dp">
+
+        <ImageView
+            android:id="@+id/image_product"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@color/blue1" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/item_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:text="Banana"
+        android:textColor="@color/black"
+        android:fontFamily="@font/dmsans_medium"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/imageLayout" />
+
+    <TextView
+        android:id="@+id/item_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/item_price_txt"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/item_name" />
+
+    <TextView
+        android:id="@+id/rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rating_background"
+        android:drawablePadding="4dp"
+        android:paddingStart="7dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="11dp"
+        android:paddingBottom="3dp"
+        android:text="@string/rating"
+        android:textColor="@color/black"
+        android:fontFamily="@font/dmsans_regular"
+        android:textSize="14sp"
+        android:textAlignment="center"
+        android:gravity="center"
+        app:drawableStartCompat="@drawable/baseline_star_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/item_price" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
