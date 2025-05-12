@@ -4,9 +4,9 @@ import com.google.gson.annotations.SerializedName
 
 data class StoreDataResponse(
     val message: String,
-    val store: Store,
-    val shipping: List<Shipping>,
-    val payment: List<Payment>
+    val store: Store? = null,
+    val shipping: List<Shipping>? = emptyList(),
+    val payment: List<Payment> = emptyList()
 )
 
 data class Store(
@@ -51,5 +51,6 @@ data class Payment(
     val id: Int,
     @SerializedName("bank_num") val bankNum: String,
     @SerializedName("bank_name") val bankName: String,
-    @SerializedName("qris_image") val qrisImage: String
+    @SerializedName("qris_image") val qrisImage: String?,
+    @SerializedName("account_name") val accountName: String?
 )

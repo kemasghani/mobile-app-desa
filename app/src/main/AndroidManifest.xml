@@ -93,6 +93,12 @@
             android:name=".ui.profile.mystore.address.StoreAddressActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.profile.mystore.payment.PaymentMethodActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.profile.mystore.shipping.ShippingServicesActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.profile.mystore.MyStoreActivity"
             android:exported="false" />
         <activity

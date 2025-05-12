@@ -6,12 +6,16 @@ import com.alya.ecommerce_serang.data.api.dto.CityResponse
 import com.alya.ecommerce_serang.data.api.dto.CompletedOrderRequest
 import com.alya.ecommerce_serang.data.api.dto.CourierCostRequest
 import com.alya.ecommerce_serang.data.api.dto.CreateAddressRequest
+import com.alya.ecommerce_serang.data.api.dto.GenericResponse
 import com.alya.ecommerce_serang.data.api.dto.LoginRequest
 import com.alya.ecommerce_serang.data.api.dto.OrderRequest
 import com.alya.ecommerce_serang.data.api.dto.OrderRequestBuy
 import com.alya.ecommerce_serang.data.api.dto.OtpRequest
+import com.alya.ecommerce_serang.data.api.dto.PaymentMethodResponse
 import com.alya.ecommerce_serang.data.api.dto.ProvinceResponse
 import com.alya.ecommerce_serang.data.api.dto.RegisterRequest
+import com.alya.ecommerce_serang.data.api.dto.ShippingService
+import com.alya.ecommerce_serang.data.api.dto.ShippingServiceRequest
 import com.alya.ecommerce_serang.data.api.dto.StoreAddressResponse
 import com.alya.ecommerce_serang.data.api.dto.UpdateCart
 import com.alya.ecommerce_serang.data.api.response.store.product.CreateProductResponse
@@ -46,6 +50,7 @@ import com.alya.ecommerce_serang.data.api.response.store.product.DeleteProductRe
 import com.alya.ecommerce_serang.data.api.response.store.product.UpdateProductResponse
 import com.alya.ecommerce_serang.data.api.response.store.product.StoreDataResponse
 import com.alya.ecommerce_serang.data.api.response.store.product.BalanceTopUpResponse
+import com.alya.ecommerce_serang.data.api.dto.AddPaymentMethodResponse
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.Body
@@ -283,4 +288,39 @@ interface ApiService {
     suspend fun updateStoreAddress(
         @Body addressData: HashMap<String, Any?>
     ): Response<StoreAddressResponse>
+
+    // Payment Method API endpoints
+    @Multipart
+    @POST("mystore/payment/add")
+    suspend fun addPaymentMethod(
+        @Part("bank_name") bankName: RequestBody,
+        @Part("bank_num") bankNum: RequestBody,
+        @Part("account_name") accountName: RequestBody,
+        @Part qris: MultipartBody.Part?
+    ): Response<GenericResponse>
+
+    @Multipart
+    @POST("mystore/payment/add")
+    suspend fun addPaymentMethodDirect(
+        @Part("bank_name") bankName: RequestBody,
+        @Part("bank_num") bankNum: RequestBody,
+        @Part("account_name") accountName: RequestBody,
+        @Part qris: MultipartBody.Part?
+    ): Response<AddPaymentMethodResponse>
+
+    @DELETE("mystore/payment/delete/{id}")
+    suspend fun deletePaymentMethod(
+        @Path("id") paymentMethodId: Int
+    ): Response<GenericResponse>
+
+    // Shipping Service API endpoints
+    @POST("mystore/shipping/add")
+    suspend fun addShippingService(
+        @Body request: ShippingServiceRequest
+    ): Response<GenericResponse>
+
+    @POST("mystore/shipping/delete")
+    suspend fun deleteShippingService(
+        @Body request: ShippingServiceRequest
+    ): Response<GenericResponse>
 }

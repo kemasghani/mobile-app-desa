@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.alya.ecommerce_serang.R
 import com.alya.ecommerce_serang.data.api.response.customer.product.PaymentInfoItem
-import com.alya.ecommerce_serang.databinding.ItemPaymentMethodBinding
+import com.alya.ecommerce_serang.databinding.ItemPaymentMethodOrderBinding
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
@@ -17,11 +17,11 @@ class PaymentMethodAdapter(
     // Selected payment name
     private var selectedPaymentName: String? = null
 
-    class PaymentMethodViewHolder(val binding: ItemPaymentMethodBinding) :
+    class PaymentMethodViewHolder(val binding: ItemPaymentMethodOrderBinding) :
         RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PaymentMethodViewHolder {
-        val binding = ItemPaymentMethodBinding.inflate(
+        val binding = ItemPaymentMethodOrderBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,
             false

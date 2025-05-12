@@ -18,6 +18,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.alya.ecommerce_serang.R
+import com.alya.ecommerce_serang.data.api.dto.PaymentMethod
 import com.alya.ecommerce_serang.data.api.response.store.product.Payment
 import com.alya.ecommerce_serang.data.api.retrofit.ApiConfig
 import com.alya.ecommerce_serang.utils.SessionManager
@@ -42,7 +43,7 @@ class BalanceTopUpActivity : AppCompatActivity() {
     private lateinit var sessionManager: SessionManager
 
     private var selectedImageUri: Uri? = null
-    private var paymentMethods: List<Payment> = emptyList()
+    private var paymentMethods: List<PaymentMethod> = emptyList()
     private var selectedPaymentId: Int = -1
 
     private val calendar = Calendar.getInstance()
@@ -148,7 +149,18 @@ class BalanceTopUpActivity : AppCompatActivity() {
                 val response = ApiConfig.getApiService(sessionManager).getStoreData()
                 if (response.isSuccessful && response.body() != null) {
                     val storeData = response.body()!!
-                    paymentMethods = storeData.payment
+                    val payments = storeData.payment
+
+                    // Convert Payment objects to PaymentMethod objects
+                    paymentMethods = payments.map { payment ->
+                        PaymentMethod(
+                            id = payment.id,
+                            bankNum = payment.bankNum,
+                            bankName = payment.bankName,
+                            qrisImage = payment.qrisImage,
+                            accountName = payment.accountName
+                        )
+                    }
 
                     setupPaymentMethodSpinner()
                 } else {
