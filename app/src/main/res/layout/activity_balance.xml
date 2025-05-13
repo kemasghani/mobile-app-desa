@@ -79,44 +79,62 @@
                     android:text="Riwayat Saldo"
                     android:layout_marginTop="10dp"/>
 
-                <!-- Date Picker dengan Icon -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/bg_text_field"
-                    android:layout_marginTop="10dp"
                     android:orientation="horizontal"
-                    android:gravity="center_vertical">
+                    android:layout_marginTop="10dp">
 
-                    <!-- Icon Kalender -->
-                    <ImageView
-                        android:id="@+id/iconDatePicker"
-                        android:layout_width="16dp"
-                        android:layout_height="16dp"
-                        android:layout_marginStart="8dp"
-                        android:src="@drawable/ic_calendar"
-                        android:contentDescription="Pilih Tanggal" />
-
-                    <EditText
-                        android:id="@+id/edt_tgl_transaksi"
+                    <!-- Date Picker dengan Icon -->
+                    <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:hint="Pilih tanggal di sini"
-                        android:padding="8dp"
-                        style="@style/body_small"
-                        android:background="@null"
-                        android:focusable="false"
-                        android:clickable="true" />
+                        android:background="@drawable/bg_text_field"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
 
-                    <ImageView
-                        android:id="@+id/img_date_picker"
-                        android:layout_width="16dp"
-                        android:layout_height="16dp"
-                        android:layout_marginEnd="8dp"
-                        android:src="@drawable/ic_navigate_next"
-                        android:contentDescription="Pilih Tanggal"
-                        app:tint="@color/black_300" />
+                        <!-- Icon Kalender -->
+                        <ImageView
+                            android:id="@+id/iconDatePicker"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_marginStart="8dp"
+                            android:src="@drawable/ic_calendar"
+                            android:contentDescription="Pilih Tanggal" />
+
+                        <EditText
+                            android:id="@+id/edt_tgl_transaksi"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="Pilih tanggal di sini"
+                            android:padding="8dp"
+                            style="@style/body_small"
+                            android:background="@null"
+                            android:focusable="false"
+                            android:clickable="true" />
+
+                        <ImageView
+                            android:id="@+id/img_date_picker"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_marginEnd="8dp"
+                            android:src="@drawable/ic_navigate_next"
+                            android:contentDescription="Pilih Tanggal"
+                            app:tint="@color/black_300" />
+
+                    </LinearLayout>
+
+                    <!-- Clear Filter Button -->
+                    <Button
+                        android:id="@+id/btn_clear_filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="Clear"
+                        android:layout_marginStart="8dp"
+                        style="@style/button.small.secondary"
+                        android:visibility="gone"/>
 
                 </LinearLayout>
 
@@ -135,8 +153,25 @@
                 android:scrollbars="vertical"
                 tools:listitem="@layout/item_balance_transaction" />
 
+            <TextView
+                android:id="@+id/tv_empty_state"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tidak ada riwayat transaksi"
+                android:gravity="center"
+                android:padding="24dp"
+                style="@style/body_medium"
+                android:visibility="gone" />
+
         </LinearLayout>
 
     </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
 
   </LinearLayout>

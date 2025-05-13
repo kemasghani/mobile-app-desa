@@ -4,7 +4,7 @@
     <color name="white">#FDFDFD</color>
     <color name="light_gray">#F7F7F7</color>
     <color name="red_required">#FF1919</color>
-    
+
     <color name="blue_50">#edf5f9</color>
     <color name="blue_100">#c6e1ed</color>
     <color name="blue_200">#abd2e5</color>
@@ -37,6 +37,8 @@
     <color name="darkblue_700">#1f2652</color>
     <color name="darkblue_800">#181e40</color>
     <color name="darkblue_900">#121731</color>
+
+    <color name="orange_500">#FFA500</color>
 
     <color name="gray_1">#E8ECF2</color>
     <color name="soft_gray">#7D8FAB</color>

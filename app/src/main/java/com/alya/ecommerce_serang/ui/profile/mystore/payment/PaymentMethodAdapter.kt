@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.alya.ecommerce_serang.R
 import com.alya.ecommerce_serang.data.api.dto.PaymentMethod
 import com.bumptech.glide.Glide
+import com.alya.ecommerce_serang.BuildConfig
 
 class PaymentMethodAdapter(
     private val onDeleteClick: (PaymentMethod) -> Unit
@@ -48,7 +49,7 @@ class PaymentMethodAdapter(
                 val imageUrl = if (paymentMethod.qrisImage.startsWith("http")) {
                     paymentMethod.qrisImage
                 } else {
-                    "http://192.168.100.31:3000${paymentMethod.qrisImage}"
+                    "${BuildConfig.BASE_URL.removeSuffix("/")}${paymentMethod.qrisImage}"
                 }
 
                 Log.d("PaymentMethodAdapter", "Loading QRIS image from: $imageUrl")

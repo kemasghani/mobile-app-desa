@@ -51,6 +51,8 @@ import com.alya.ecommerce_serang.data.api.response.store.product.UpdateProductRe
 import com.alya.ecommerce_serang.data.api.response.store.product.StoreDataResponse
 import com.alya.ecommerce_serang.data.api.response.store.product.BalanceTopUpResponse
 import com.alya.ecommerce_serang.data.api.dto.AddPaymentMethodResponse
+import com.alya.ecommerce_serang.data.api.response.store.StoreResponse as MyStoreResponse
+import com.alya.ecommerce_serang.data.api.response.store.TopUpResponse
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.Body
@@ -237,6 +239,15 @@ interface ApiService {
 
     @GET("mystore")
     suspend fun getStoreData(): Response<StoreDataResponse>
+
+    @GET("mystore")
+    suspend fun getMyStoreData(): Response<com.alya.ecommerce_serang.data.api.response.store.StoreResponse>
+
+    @GET("store/topup")
+    suspend fun getTopUpHistory(): Response<com.alya.ecommerce_serang.data.api.response.store.TopUpResponse>
+
+    @GET("store/topup")
+    suspend fun getFilteredTopUpHistory(@Query("date") date: String): Response<com.alya.ecommerce_serang.data.api.response.store.TopUpResponse>
 
     @Multipart
     @POST("store/createtopup")

@@ -24,6 +24,7 @@ import com.alya.ecommerce_serang.ui.profile.mystore.payment.PaymentMethodActivit
 import com.alya.ecommerce_serang.ui.profile.mystore.shipping.ShippingServicesActivity
 import com.bumptech.glide.Glide
 import kotlin.getValue
+import com.alya.ecommerce_serang.BuildConfig
 
 class DetailStoreProfileActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailStoreProfileBinding
@@ -141,7 +142,7 @@ class DetailStoreProfileActivity : AppCompatActivity() {
 
         // Update store image if available
         if (store.storeImage != null && store.storeImage.toString().isNotEmpty() && store.storeImage.toString() != "null") {
-            val imageUrl = "http://192.168.100.31:3000${store.storeImage}"
+            val imageUrl = "${BuildConfig.BASE_URL.removeSuffix("/")}${store.storeImage}"
             Log.d("DetailStoreProfile", "Loading image from: $imageUrl")
 
             Glide.with(this)

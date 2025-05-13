@@ -333,6 +333,8 @@ class BalanceTopUpActivity : AppCompatActivity() {
                             .setMessage(successMessage)
                             .setPositiveButton("OK") { dialog, _ ->
                                 dialog.dismiss()
+                                // Set result OK so parent activity can refresh data
+                                setResult(RESULT_OK)
                                 finish()
                             }
                             .show()
@@ -367,6 +369,7 @@ class BalanceTopUpActivity : AppCompatActivity() {
                             .setMessage(errorMessage)
                             .setPositiveButton("OK") { dialog, _ ->
                                 dialog.dismiss()
+                                setResult(RESULT_CANCELED)
                             }
                             .show()
                     }
@@ -378,6 +381,7 @@ class BalanceTopUpActivity : AppCompatActivity() {
                     "Error: ${e.message}",
                     Toast.LENGTH_SHORT
                 ).show()
+                setResult(RESULT_CANCELED)
             } finally {
                 // Reset button state
                 btnSend.text = "Kirim"

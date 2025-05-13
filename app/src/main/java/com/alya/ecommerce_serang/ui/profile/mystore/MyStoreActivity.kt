@@ -7,6 +7,8 @@ import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
+import com.alya.ecommerce_serang.BuildConfig
 import com.alya.ecommerce_serang.R
 import com.alya.ecommerce_serang.data.api.dto.Store
 import com.alya.ecommerce_serang.data.api.retrofit.ApiConfig
@@ -26,12 +28,15 @@ import com.alya.ecommerce_serang.utils.BaseViewModelFactory
 import com.alya.ecommerce_serang.utils.SessionManager
 import com.alya.ecommerce_serang.utils.viewmodel.MyStoreViewModel
 import com.bumptech.glide.Glide
+import kotlinx.coroutines.launch
 import kotlin.getValue
 
 class MyStoreActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMyStoreBinding
     private lateinit var apiService: ApiService
     private lateinit var sessionManager: SessionManager
+
+    private val TAG = "MyStoreActivity"
 
     private val viewModel: MyStoreViewModel by viewModels {
         BaseViewModelFactory {
@@ -62,6 +67,7 @@ class MyStoreActivity : AppCompatActivity() {
         }
 
         setUpClickListeners()
+        fetchStoreBalance()
     }
 
     private fun myStoreProfileOverview(store: Store){
@@ -70,7 +76,7 @@ class MyStoreActivity : AppCompatActivity() {
 
         // Load store image if available
         if (store.storeImage != null && store.storeImage.toString().isNotEmpty() && store.storeImage.toString() != "null") {
-            val imageUrl = "http://192.168.100.31:3000${store.storeImage}"
+            val imageUrl = "${BuildConfig.BASE_URL.removeSuffix("/")}${store.storeImage}"
             Log.d("MyStoreActivity", "Loading store image from: $imageUrl")
 
             Glide.with(this)
@@ -83,6 +89,30 @@ class MyStoreActivity : AppCompatActivity() {
         }
     }
 
+    private fun fetchStoreBalance() {
+        lifecycleScope.launch {
+            try {
+                val response = apiService.getMyStoreData()
+                if (response.isSuccessful && response.body() != null) {
+                    val storeData = response.body()!!
+                    val balance = storeData.store.balance
+
+                    // Format the balance to be displayed
+                    try {
+                        val balanceValue = balance.toDouble()
+                        binding.tvBalance.text = String.format("Rp%,.0f", balanceValue)
+                    } catch (e: Exception) {
+                        binding.tvBalance.text = "Rp$balance"
+                    }
+                } else {
+                    Log.e(TAG, "Failed to get store balance: ${response.errorBody()?.string()}")
+                }
+            } catch (e: Exception) {
+                Log.e(TAG, "Error fetching store balance", e)
+            }
+        }
+    }
+
     private fun setUpClickListeners() {
         binding.btnEditProfile.setOnClickListener {
             val intent = Intent(this, DetailStoreProfileActivity::class.java)
@@ -90,7 +120,7 @@ class MyStoreActivity : AppCompatActivity() {
         }
 
         binding.layoutBalance.setOnClickListener {
-            startActivity(Intent(this, BalanceActivity::class.java))
+            startActivityForResult(Intent(this, BalanceActivity::class.java), BALANCE_REQUEST_CODE)
         }
 
         binding.tvHistory.setOnClickListener {
@@ -146,10 +176,14 @@ class MyStoreActivity : AppCompatActivity() {
             // Refresh store data
             viewModel.loadMyStore()
             Toast.makeText(this, "Profil toko berhasil diperbarui", Toast.LENGTH_SHORT).show()
+        } else if (requestCode == BALANCE_REQUEST_CODE) {
+            // Refresh balance data regardless of result
+            fetchStoreBalance()
         }
     }
 
     companion object {
         private const val PROFILE_REQUEST_CODE = 100
+        private const val BALANCE_REQUEST_CODE = 101
     }
 }

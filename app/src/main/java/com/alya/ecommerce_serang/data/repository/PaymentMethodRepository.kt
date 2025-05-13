@@ -106,15 +106,6 @@ class PaymentMethodRepository(private val apiService: ApiService) {
             } else {
                 Log.d(TAG, "No qris image part will be included in the request")
             }
-
-            // Example input data being sent to API
-            Log.d(TAG, "Example input data sent to API endpoint http://192.168.100.31:3000/mystore/payment/add:")
-            Log.d(TAG, "Method: POST")
-            Log.d(TAG, "Content-Type: multipart/form-data")
-            Log.d(TAG, "Form fields:")
-            Log.d(TAG, "- bank_name: $bankName")
-            Log.d(TAG, "- bank_num: $bankNumber")
-            Log.d(TAG, "- account_name: $accountName")
             if (qrisPart != null) {
                 Log.d(TAG, "- qris: [binary image file: ${qrisImageFile?.name}, size: ${qrisImageFile?.length()} bytes]")
             }
